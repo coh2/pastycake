@@ -3,10 +3,10 @@ import traceback
 
 from sys import stderr
 
-from .storage_backend import StorageBackend
+from .sql_backend import SqlBackend
 
 
-class SqliteBackend(StorageBackend):
+class SqliteBackend(SqlBackend):
     DEFAULT_DB = 'urls.db'
 
     def __init__(self, filename=None):
