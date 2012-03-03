@@ -6,10 +6,10 @@ import louie as L
 
 from email.mime.text import MIMEText
 
-from pastebin_source import PastebinSource
+from .notifier import Notifier
 
 
-class Mailer(object):
+class Mailer(Notifier):
     def __init__(self, recv, sender=None):
         self._recv = recv
         self._sender = sender
@@ -18,7 +18,7 @@ class Mailer(object):
     def _handle_match(self, *args, **kwargs):
         self.sendmail(url=kwargs.get('url', ''),
                       matcher=kwargs.get('match', ''),
-                      data = kwargs.get('data', ''))
+                      data=kwargs.get('data', ''))
 
     def sendmail(self, url, matcher, data):
         sender = self._sender or "pastycake@" + socket.gethostname()
