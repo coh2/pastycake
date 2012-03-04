@@ -13,6 +13,7 @@ except ImportError:
     print >> sys.stderr, "This file requires SqlAlchemy."
     raise
 
+
 _Modelbase = declarative_base()
 
 
