@@ -33,8 +33,6 @@ class PasteService(_Modelbase):
                 autoincrement=True)
     url = Column(String)
     viewed = Column(TIMESTAMP)
-    pastes = relationship('PasteMatch')
-
     matches = relationship('PasteMatcher', secondary=paste_match,
                            backref='matched_urls')
 
