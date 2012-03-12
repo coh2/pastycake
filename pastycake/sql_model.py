@@ -38,6 +38,9 @@ class PasteService(_Modelbase):
     matches = relationship('PasteMatcher', secondary=paste_match,
                            backref='matched_urls')
 
+    def __init__(self, url):
+        self.url = url
+
 
 class PasteMatcher(_Modelbase):
     __tablename__ = 'matchers'
