@@ -12,7 +12,7 @@ class KeywordStorage(object):
         first.
 
         '''
-        raise NotImplemented
+        pass
 
     @abc.abstractmethod
     def disable_keyword(self, kw):
@@ -22,17 +22,17 @@ class KeywordStorage(object):
         first.
 
         '''
-        raise NotImplemented
+        pass
 
     @abc.abstractproperty
     def available_keywords(self):
         '''return a list of all known (but perhaps disabled) keywords.'''
-        raise NotImplemented
+        pass
 
     @abc.abstractproperty
     def current_keywords(self):
         '''return a list of all enabled keywords.'''
-        raise NotImplemented
+        pass
 
     @property
     def enabled_keywords(self):
